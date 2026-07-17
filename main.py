@@ -4,6 +4,7 @@ from aiogram.types import Message
 import asyncio
 
 from config import TOKEN
+from keyboards.main_menu import main_menu
 
 bot = Bot(TOKEN)
 dp = Dispatcher()
@@ -11,7 +12,11 @@ dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def start(message: Message):
-    await message.answer("سلام 🌹\nبه ربات دوستیابی نوین خوش آمدید.")
+    await message.answer(
+        "🌹 به ربات دوستیابی نوین خوش آمدید.\n\n"
+        "برای شروع روی دکمه زیر کلیک کنید.",
+        reply_markup=main_menu
+    )
 
 
 async def main():
