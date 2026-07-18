@@ -2,7 +2,7 @@
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 import asyncio
-
+from handlers.register import router as register_router
 from config import TOKEN
 from keyboards.main_menu import main_menu
 print("TOKEN =", TOKEN)
@@ -20,6 +20,7 @@ async def start(message: Message):
 
 
 async def main():
+    dp.include_router(register_router)
     await dp.start_polling(bot)
 
 
