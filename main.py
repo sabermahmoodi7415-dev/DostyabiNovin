@@ -5,7 +5,7 @@ import asyncio
 
 from config import TOKEN
 from keyboards.main_menu import main_menu
-
+print("TOKEN =", TOKEN)
 bot = Bot(TOKEN)
 dp = Dispatcher()
 
